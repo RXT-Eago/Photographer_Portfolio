@@ -1,0 +1,27 @@
+# dependencies
+/portfolio/node_modules
+/portfolio/.pnp
+/portfolio/.pnp.js
+
+# testing
+/portfolio/coverage
+
+# next.js
+/portfolio/.next/
+/portfolio/out/
+
+# production
+/portfolio/build
+
+
+# debug
+/portfolio/npm-debug.log*
+/portfolio/yarn-debug.log*
+/portfolio/yarn-error.log*
+/portfolio/.pnpm-debug.log*
+
+# local env files
+/portfolio/.env*.local
+
+# vercel
+/portfolio/.vercel
