@@ -13,16 +13,16 @@ export default function NavBarDefault() {
 
     <div>       
         
-        <nav className="flex">
-            <div className="text-[27px] w-5/12 font-normal">
+        <nav className="flex py-12 px-8">
+            <h1 className="text-[27px] w-5/12 font-normal">
                     MAXIME RASPOLLINI
-            </div>
+            </h1>
             <ul className="flex justify-end gap-8 pl-12 pt-[6px] w-7/12 float-right text-lg ">
                 <li ><a href="#0">Home</a></li>
                 <li ><a href="#0">Projects</a></li>
                 <li ><a href="#0">About/Contact</a></li>
-                <li className="pl-4"><img className='w-[25px] h-[25px]' src="/insta.svg" alt="" /></li>
-                <li className=""><img className='w-[25px] h-[25px]' src="/mail.svg" alt="" /></li>
+                <div className="pl-4"><img className='w-[25px] h-[25px]' src="/insta.svg" alt="" /></div>
+                <div className=""><img className='w-[25px] h-[25px]' src="/mail.svg" alt="" /></div>
             </ul>           
 
         </nav>

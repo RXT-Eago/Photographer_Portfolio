@@ -43,3 +43,71 @@ a {
   li a:focus::after{
     transform: translate3d(0, 0, 0);
   }
+
+  /* child styles for li 1 2 3*/
+  li {
+    animation: BtoTop 1s;
+    -webkit-animation: BtoTop 1s;
+    -moz-animation: BtoTop 1s;
+    -o-animation: BtoTop 1s;
+    -ms-animation: BtoTop 1s;
+  }
+
+  li:nth-child(1) {
+    animation-delay: 30ms;
+  }  
+  li:nth-child(2) {
+    animation-delay: 60ms;
+  }  
+  li:nth-child(3) {
+    animation-delay: 90ms;
+    }
+    li:nth-child(4) {
+      animation-delay: 120ms;
+      } 
+      li:nth-child(5) {
+        animation-delay: 150ms;
+        } 
+
+
+
+h1 {
+    animation: LeftToRightTitle 1s;
+    -webkit-animation: LeftToRightTitle 1s;
+    -moz-animation: LeftToRightTitle 1s;
+    -o-animation: LeftToRightTitle 1s;
+    -ms-animation: LeftToRightTitle 1s;    
+}
+
+@keyframes LeftToRightTitle {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+h2 {
+    animation: BtoTop 1s;
+    -webkit-animation: BtoTop 1s;
+    -moz-animation: BtoTop 1s;
+    -o-animation: BtoTop 1s;
+    -ms-animation: BtoTop 1s;    
+}
+
+@keyframes BtoTop {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+

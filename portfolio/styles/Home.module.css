@@ -17,3 +17,146 @@
         opacity: 1;
     }
 }
+
+.topBar {
+    animation: rotate45 1s;
+    -webkit-animation: rotate45 1s;
+    -moz-animation: rotate45 1s;
+    -o-animation: rotate45 1s;
+    -ms-animation: rotate45 1s;
+
+    
+
+    transform: rotate(-45deg);
+
+    width: 1rem;
+    height: 0.125rem;
+    margin-left: 1rem;
+    background-color: #000;
+
+}
+
+@keyframes rotate45 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+.BottomBar {
+    animation: rotate45inverse 1s;
+    -webkit-animation: rotate45inverse 1s;
+    -moz-animation: rotate45inverse 1s;
+    -o-animation: rotate45inverse 1s;
+    -ms-animation: rotate45inverse 1s;
+
+    
+
+    transform: rotate(-45deg);
+
+    width: 1rem;
+    height: 0.125rem;
+    background-color: #000;
+
+}
+
+@keyframes rotate45inverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+.middleBar {
+    animation: Turn 1s;
+    -webkit-animation: Turn 1s;
+    -moz-animation: Turn 1s;
+    -o-animation: Turn 1s;
+    -ms-animation: Turn 1s;
+
+    transform: rotate(45deg);
+
+
+    opacity: 1;
+
+    width: 2rem;
+    height: 0.125rem;
+    background-color: #000;
+
+}
+
+@keyframes Turn {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+
+.ImageCardDisplay::before{
+    animation: BtoTop 1s;
+    -webkit-animation: BtoTop 1s;
+    -moz-animation: BtoTop 1s;
+    -o-animation: BtoTop 1s;
+    -ms-animation: BtoTop 1s;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    opacity: 0;
+
+      
+
+    
+
+}
+
+.ImageCardDisplay{
+    animation: BtoTop 1s;
+    -webkit-animation: BtoTop 1s;
+    -moz-animation: BtoTop 1s;
+    -o-animation: BtoTop 1s;
+    -ms-animation: BtoTop 1s;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    opacity: 0;
+    
+}
+
+
+/* at the end of the animation opcaity is set to 1 */
+
+
+
+
+
+
+@keyframes BtoTop {
+    0% {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
