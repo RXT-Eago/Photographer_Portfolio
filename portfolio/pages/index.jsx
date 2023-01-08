@@ -51,6 +51,29 @@ export default function Home() {
 
   useEffect(() => {
 
+    // for loop of Num
+
+    for (let i = 0; i < Num.length; i++) {
+
+        const image = document.getElementById(`image${Num[i]}`)
+      image.style.animationDelay = `${i * 0.1}s`
+      // at  the end of the animation opacity is set to 1
+        image.addEventListener('animationend', () => {
+            image.style.opacity = 1
+        }
+        )
+       
+       }
+
+
+
+      
+
+
+  }, [])
+
+  useEffect(() => {
+
     // restart the fadeinimage animation when the image changes
 
     try {
@@ -59,6 +82,13 @@ export default function Home() {
     image.classList.remove(styles.fadeinimage)
     void image.offsetWidth
     image.classList.add(styles.fadeinimage)
+
+
+
+
+
+
+
 
     } catch (error) {
       console.log(error)
@@ -74,7 +104,7 @@ export default function Home() {
 
 
 
-    <div className="font-main px-8 pt-16">
+    <div className="font-main">
 
       {
         showCarousel ? (
@@ -87,9 +117,9 @@ export default function Home() {
 
             <div className="my-16 mx-12 w-full flex">
 
-              <div className="w-1/12 h-full  flex justify-items-center">
+              <div className="w-1/12 h-full  flex justify-items-center" onClick={MinusImageId}>
 
-                <button className=" flex justify-center justify-self-center m-auto" onClick={MinusImageId}>
+                <button className=" flex justify-center justify-self-center m-auto" >
                   <img className="w-full rotate-180 px-2" src="/assets/images/Arrow.png" alt="precedent" />
                 </button>
 
@@ -107,8 +137,8 @@ export default function Home() {
 
               </div>
 
-              <div className="w-1/12 h-full  flex justify-items-center">
-                <button className=" flex justify-center justify-self-center m-auto" onClick={PlusImageId}>
+              <div className="w-1/12 h-full  flex justify-items-center" onClick={PlusImageId}>
+                <button className=" flex justify-center justify-self-center m-auto" >
                   <img className="w-full px-2" src="/assets/images/Arrow.png" alt="suivant" />
                 </button>
               </div>
@@ -124,14 +154,14 @@ export default function Home() {
 
 
 
-      <div className="py-12" id="hero">
+      <div className="py-12 px-8" id="hero">
 
         <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {
             Num.map((num) => {
 
               return (
-                <div key={num} className="relative flex items-center overflow-hidden" onClick={() => SetCarouselView(num)}>
+                <div key={num} id={`image${num}`} className={styles.ImageCardDisplay} onClick={() => SetCarouselView(num)}>
 
                   <img className="w-full transition-all duration-500 ease-in-out hover:scale-110" src={`/assets/images/${num}.png`} alt={`img${num}`} />
 

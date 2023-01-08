@@ -10,9 +10,9 @@ export default function Footer() {
 
     <div className='py-4'>
 
-        <hr className="absolute -left-4 w-screen h-[3px] bg-black" />
+        <hr className="absolute left-0 w-full h-[3px] bg-black" />
 
-        <div className="py-2 flex">
+        <div className="py-2 px-1 flex">
 
          © Maxime Rasponllini 2021 - 2023, <a className="ml-1" href="/legal">Disclaimer & Privacy Policy</a> 
 
