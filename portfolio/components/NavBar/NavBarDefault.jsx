@@ -13,13 +13,13 @@ export default function NavBarDefault() {
 
     <div>       
         
-        <nav className="flex z-[100] py-4 px-8">
-            <h1 className="text-[24px] w-2/3 font-normal flex justify-start items-center">
+        <nav className="flex z-[100] py-4 px-8 md:px-16">
+            <div className="text-[24px] w-2/3 font-normal flex justify-start items-center">
                   <Link href="/" className="hover:underline">MAXIME RASPOLLINI</Link>
-            </h1>
-            <h1 className="text-[24px] w-1/3 font-normal text-right flex justify-end items-center">
+            </div>
+            <div className="text-[24px] w-1/3 font-normal text-right flex justify-end items-center">
                   <Link href="/me" className="hover:underline">INDEX</Link>
-            </h1>        
+            </div>        
 
         </nav>
         
