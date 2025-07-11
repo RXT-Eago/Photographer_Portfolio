@@ -169,27 +169,29 @@ export default function Home() {
 
 
 
-      <div className="py-12 mt-12 px-8" id="hero">
+      <div className="py-32 mt-24 px-16" id="hero">
+        <div className="grid grid-cols-1 gap-24">
+          {Num.map((num, idx) => {
+            let alignment = "justify-center";
+            if (idx % 2 === 0) alignment = "justify-end";
+            else if (idx % 2 === 1) alignment = "justify-start";
 
-        <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {
-            Num.map((num) => {
-
-              return (
-                <div key={num} id={`image${num}`} className={styles.ImageCardDisplay} onClick={() => SetCarouselView(num)}>
-
-                  <img className="w-full transition-all duration-500 ease-in-out hover:scale-110" src={`/assets/images/${num}.png`} alt={`img${num}`} />
-
-                </div>
-              )
-
-            })
-          }
-
-
-
+            return (
+              <div
+                key={num}
+                id={`image${num}`}
+                className={`flex ${alignment} my-12`}
+                onClick={() => SetCarouselView(num)}
+              >
+                <img
+                  className="w-full max-w-xl transition-all duration-500 ease-in-out hover:scale-110"
+                  src={`/assets/images/${num}.png`}
+                  alt={`img${num}`}
+                />
+              </div>
+            );
+          })}
         </div>
-
       </div>
 
       <Footer />
