@@ -25,7 +25,7 @@ export default function NavBarMobile() {
 
             <div className="flex mx-8 h-36 items-center">
 
-              <h1 className="w-3/4 text-[27px]">
+              <h1 className="w-3/4 text-[32px]">
                 MAXIME RASPOLLINI
               </h1>
               <div className="w-1/4 flex justify-end">

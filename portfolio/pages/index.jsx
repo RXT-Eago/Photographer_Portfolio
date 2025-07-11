@@ -9,6 +9,7 @@ import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
 import { useState } from 'react'
+import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 export default function Home() {
 
@@ -29,6 +30,7 @@ export default function Home() {
     }
 
   }
+
   async function PlusImageId() {
 
     if (imageId < 11) {
@@ -41,12 +43,25 @@ export default function Home() {
 
   async function MinusImageId() {
 
-    if (imageId > 2) {
+    if (imageId > 1) {
       setImageId(imageId - 1)
     } else {
       setImageId(11)
     }
 
+  }
+
+  function closeCarousel() {
+    setShowCarousel(false)
+  }
+
+  function handleImageClick(e) {
+    e.stopPropagation()
+  }
+
+  function handleChevronClick(e, action) {
+    e.stopPropagation()
+    action()
   }
 
   useEffect(() => {
@@ -109,38 +124,38 @@ export default function Home() {
       {
         showCarousel ? (
 
-          <div className="fixed top-0 left-0 w-screen h-screen bg-white bg-opacity-80 z-50 flex justify-center">
+          <div className="fixed top-0 left-0 w-screen h-screen bg-white z-50 flex justify-center" onClick={closeCarousel}>
 
-            <button className="absolute right-8 top-2 text-[32px]" onClick={SetCarouselView}>
-              x
+            <button className="absolute right-8 top-2 text-[32px] z-10" onClick={(e) => handleChevronClick(e, SetCarouselView)}>
+              <XMarkIcon className="w-8 h-8" />
             </button>
 
-            <div className="my-16 mx-12 w-full flex">
+            <div className="my-16 mx-4 sm:mx-8 md:mx-12 w-full flex" onClick={handleImageClick}>
 
-              <div className="w-1/12 h-full  flex justify-items-center" onClick={MinusImageId}>
+              <div className="w-1/6 sm:w-1/12 h-full flex justify-center items-center cursor-pointer transition-colors duration-200" onClick={(e) => handleChevronClick(e, MinusImageId)}>
 
-                <button className=" flex justify-center justify-self-center m-auto" >
-                  <img className="w-full rotate-180 px-2" src="/assets/images/Arrow.png" alt="precedent" />
-                </button>
+                <div className="flex justify-center items-center p-4">
+                  <ChevronLeftIcon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-gray-700 hover:text-black transition-colors duration-200" />
+                </div>
 
               </div>
 
-              <div className="w-10/12 h-full flex justify-center justify-self-center">
+              <div className="w-4/6 sm:w-10/12 h-full flex justify-center items-center">
 
-                <div className="flex justify-center justify-self-center m-auto">
+                <div className="flex justify-center items-center max-w-full max-h-full">
                   
                     
-                      <img id="carousel" className={styles.fadeinimage} src={`/assets/images/${imageId}.png`} alt="IMAGE" />
+                      <img id="carousel" className={`${styles.fadeinimage} max-w-full max-h-full object-contain`} src={`/assets/images/${imageId}.png`} alt="IMAGE" />
                     
                   
                 </div>
 
               </div>
 
-              <div className="w-1/12 h-full  flex justify-items-center" onClick={PlusImageId}>
-                <button className=" flex justify-center justify-self-center m-auto" >
-                  <img className="w-full px-2" src="/assets/images/Arrow.png" alt="suivant" />
-                </button>
+              <div className="w-1/6 sm:w-1/12 h-full flex justify-center items-center cursor-pointer transition-colors duration-200" onClick={(e) => handleChevronClick(e, PlusImageId)}>
+                <div className="flex justify-center items-center p-4">
+                  <ChevronRightIcon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-gray-700 hover:text-black transition-colors duration-200" />
+                </div>
               </div>
 
             </div>
@@ -154,7 +169,7 @@ export default function Home() {
 
 
 
-      <div className="py-12 px-8" id="hero">
+      <div className="py-12 mt-12 px-8" id="hero">
 
         <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {
