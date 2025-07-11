@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 export default function CarouselModal({ images, startIndex = 0, onClose }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     startIndex,
     loop: true,
-    skipSnaps: false,
+    skipSnaps: true,
     dragFree: false,
   });
   const modalRef = useRef(null);
@@ -42,26 +42,18 @@ export default function CarouselModal({ images, startIndex = 0, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-      <div ref={modalRef} className="relative w-full max-w-3xl mx-auto h-[80vh] flex flex-col">
-        {/* Close button */}
-        <button
-          className="absolute top-4 right-4 z-10 bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition"
-          onClick={onClose}
-          aria-label="Close carousel"
-        >
-          <XMarkIcon className="w-8 h-8 text-black" />
-        </button>
+      <div ref={modalRef} className="relative w-full max-w-3xl mx-auto flex flex-col">
         {/* Carousel */}
         <div className="flex-1 flex items-center">
           {/* Left arrow */}
-          <button
+          {/* <button
             className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition"
             onClick={scrollPrev}
             aria-label="Previous image"
             type="button"
           >
             <ChevronLeftIcon className="w-8 h-8 text-black" />
-          </button>
+          </button> */}
           {/* Embla viewport */}
           <div ref={emblaRef} className="overflow-hidden w-full h-full">
             <div className="flex h-full">
@@ -74,7 +66,7 @@ export default function CarouselModal({ images, startIndex = 0, onClose }) {
                   <img
                     src={src}
                     alt={`carousel-img-${idx}`}
-                    className="max-h-[70vh] max-w-full object-contain rounded-lg shadow-lg mx-auto"
+                    className="max-h-[70vh] max-w-full object-contain  shadow-lg mx-auto"
                     draggable={false}
                   />
                 </div>
@@ -82,14 +74,14 @@ export default function CarouselModal({ images, startIndex = 0, onClose }) {
             </div>
           </div>
           {/* Right arrow */}
-          <button
+          {/* <button
             className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition"
             onClick={scrollNext}
             aria-label="Next image"
             type="button"
           >
             <ChevronRightIcon className="w-8 h-8 text-black" />
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

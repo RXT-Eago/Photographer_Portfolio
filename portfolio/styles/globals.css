@@ -5,69 +5,7 @@
 
 
 /* Underline styles */
-a {
-    display: block;
-    position: relative;
-    padding: 0;
-  }
-  
-  /* Fade in */
-  a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.1em;
-    background-color: rgb(0, 0, 0);
-    opacity: 0;
-    transition: opacity 300ms, transform 300ms;
-  }
-  
-  a:hover::after,
-  a:focus::after {
-    opacity: 1;
-    transform: translate3d(0, 0.2em, 0);
-  }
-  
-  li a {
-    overflow: hidden;
-  }
-  
-  li a::after {
-    opacity :1;
-    transform: translate3d(-100%, 0, 0);
-  }
-  
-  li a:hover::after,
-  li a:focus::after{
-    transform: translate3d(0, 0, 0);
-  }
 
-  /* child styles for li 1 2 3*/
-  li {
-    animation: BtoTop 1s;
-    -webkit-animation: BtoTop 1s;
-    -moz-animation: BtoTop 1s;
-    -o-animation: BtoTop 1s;
-    -ms-animation: BtoTop 1s;
-  }
-
-  li:nth-child(1) {
-    animation-delay: 30ms;
-  }  
-  li:nth-child(2) {
-    animation-delay: 60ms;
-  }  
-  li:nth-child(3) {
-    animation-delay: 90ms;
-    }
-    li:nth-child(4) {
-      animation-delay: 120ms;
-      } 
-      li:nth-child(5) {
-        animation-delay: 150ms;
-        } 
 
 
 
