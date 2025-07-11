@@ -13,11 +13,11 @@ export default function NavBarDefault() {
 
     <div>       
         
-        <nav className="flex py-4 px-8">
-            <h1 className="text-[32px] w-1/2 font-normal">
+        <nav className="flex z-[100] py-4 px-8">
+            <h1 className="text-[24px] w-2/3 font-normal">
                     MAXIME RASPOLLINI
             </h1>
-            <h1 className="text-[32px] w-1/2 font-normal text-right">
+            <h1 className="text-[24px] w-1/3 font-normal text-right">
                     INDEX
             </h1>        
 

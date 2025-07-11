@@ -32,7 +32,7 @@ export default function NavBar() {
   return (
 
 
-    <div className='fixed top-0 left-0 w-full z-50 bg-transparent'>
+    <div className='fixed top-0 left-0 w-full z-[100] bg-transparent'>
         <Header />
 
         {showMobile ? (
